@@ -1,7 +1,11 @@
-const http=require('http');
-const routes=require('./routes.js')
 
-const server=http.createServer(routes)
-server.listen(3000,'localhost',()=>{
-    console.log('server is listen port no 3000 ')
+const express=require('express');
+
+const app=express();
+
+app.use((req, res,next)=>{
+    res.send('<h1> Express is working Now </h1>')
 })
+
+
+app.listen(3000);
